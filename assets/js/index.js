@@ -121,6 +121,7 @@ window.onload = function() {
         
         try {
             await getPackageData(packageName.val());
+            drawChart();
             packageList.push(packageName.val());
             localStorage.setItem("packageList", JSON.stringify(packageList));
             packageToTrack.append(packageElement.dom());
