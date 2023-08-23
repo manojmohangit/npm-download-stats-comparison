@@ -1,0 +1,38 @@
+.cursor-pointer {
+    cursor: pointer;
+}
+body {
+    font-family: 'Lato', sans-serif;
+}
+#package-to-track {
+    /* overflow-x: scroll;
+    white-space: nowrap; */
+}
+#package-to-track div {
+    flex: 1 0 auto;
+}
+
+.overflow-x-auto {
+    overflow-x: scroll;
+}
+
+.overflow-x-auto::-webkit-scrollbar {
+    height: 10px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+.overflow-x-auto::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(209, 208, 208);
+    border-radius: 8px;
+}
+.overflow-x-auto::-webkit-scrollbar-thumb {
+    background: #eeecec;
+    border-radius: 8px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb:hover {
+    background: #bdbbbb;
+}
