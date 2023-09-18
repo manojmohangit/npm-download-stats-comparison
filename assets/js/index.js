@@ -39,7 +39,21 @@ window.onload = function() {
             }
         },
         toolTip: {
-            shared: true
+            shared: true,
+            contentFormatter: function(e) {
+                var content = " ", total = 0;
+                content += CanvasJS.formatDate(e.entries[0].dataPoint.x, "MMM DD YYYY") + "<br/>";
+                if(e.entries.length > 1)
+                    for (var i = 0; i < e.entries.length; i++) {
+                        total += e.entries[i].dataPoint.y;
+                    }
+				for (var i = 0; i < e.entries.length; i++) {
+					content += "<span style='color:" + e.entries[i].dataSeries.color + ";'>" + e.entries[i].dataSeries.name + "</span> " + e.entries[i].dataPoint.y + (e.entries.length > 1 && total != 0 ? (" (" + parseFloat((e.entries[i].dataPoint.y / total) * 100).toFixed(2) + "%)") : "");
+					content += "<br/>";
+				}
+                content += e.entries.length > 1 ? ("Total: " + total + "<br/>") : "";
+				return content;
+            }
         },
         data: dataOptions
     }
